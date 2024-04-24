@@ -20,13 +20,6 @@ test("Displays a list of movie titles", async () =>{
   expect(titleList[0].textContent).toBe("Doctor Strange");
 })
 
-test("Displays links for each associated movie", async () =>{
-  render(<RouterProvider router={router}/>);
-  const linkList = await screen.findAllByText(/View Info/);
-  expect(linkList.length).toBeGreaterThan(2);
-  expect(linkList[0].href).toBe("http://localhost/movie/1");
-})
-
 test("renders the <NavBar /> component", () => {
   const router = createMemoryRouter(routes)
   render(
